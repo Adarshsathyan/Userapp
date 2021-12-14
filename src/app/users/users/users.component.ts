@@ -10,7 +10,9 @@ export class UsersComponent implements OnInit {
 
   users: any
   p: number = 1;
-  constructor(private ds:DataService) { }
+  constructor(private ds: DataService) {
+    
+   }
 
   ngOnInit(): void {
     this.ds.getUsers().subscribe((response) => {

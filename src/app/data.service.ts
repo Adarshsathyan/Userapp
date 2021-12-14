@@ -12,4 +12,5 @@ export class DataService {
   getUsers() {
     return this.http.get('https://api.github.com/users')
   }
+
 }
