@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-users',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  users: any
+  p: number = 1;
+  constructor(private ds:DataService) { }
 
   ngOnInit(): void {
+    this.ds.getUsers().subscribe((response) => {
+      this.users = response;
+
+    })
+    
+  }
+
+  key: string = 'id';
+  reverse: boolean = false;
+  sort(key: string) {
+    this.key = key;
+    this.reverse = !this.reverse;
   }
 
 }
