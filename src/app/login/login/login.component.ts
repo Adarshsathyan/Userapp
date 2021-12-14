@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Invalid entries, try again !',
+        text: 'Invalid entries. Try again !',
       })
    }
     
